@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Windows 98 Styles */
+@layer components {
+  .win98-button {
+    @apply bg-gray-300 border-2 border-gray-200 border-r-gray-500 border-b-gray-500 px-3 py-1 text-sm font-semibold;
+  }
+  
+  .win98-button:hover {
+    @apply bg-gray-200;
+  }
+  
+  .win98-button:active {
+    @apply border-r-gray-200 border-b-gray-200 border-l-gray-500 border-t-gray-500;
+  }
+  
+  .win98-window {
+    @apply bg-gray-300 border-2 border-gray-200 border-r-gray-500 border-b-gray-500 shadow-lg;
+  }
+  
+  .win98-inset {
+    @apply border-2 border-gray-500 border-r-gray-200 border-b-gray-200;
+  }
+}
+
+/* Custom animations */
+@keyframes glitch {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 2px) }
+  40% { transform: translate(-2px, -2px) }
+  60% { transform: translate(2px, 2px) }
+  80% { transform: translate(2px, -2px) }
+  100% { transform: translate(0) }
+}
+
+.animate-glitch {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+/* Pixel-perfect font rendering */
+* {
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for Windows 98 feel */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #c0c0c0;
+  border: 1px solid #808080;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border: 1px solid #808080;
+  border-top: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+/* Terminal cursor blink */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+/* Dream-like hover effects */
+.dream-hover {
+  transition: all 0.3s ease;
+}
+
+.dream-hover:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ethereal glow effect */
+.ethereal-glow {
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
